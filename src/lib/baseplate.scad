@@ -3,8 +3,6 @@ include <../_settings.scad>;
 
 module baseplate(width, depth = BASE_DEFAULT_DEPTH, height = BASE_DEFAULT_HEIGHT,
                  rotate=false){
-    echo("=================");
-    echo(width, depth, height);
     if (rotate == true){
         rotate([0,0,180]){
             translate([-width, -depth, 0]){
