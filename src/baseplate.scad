@@ -2,9 +2,9 @@
 // By default, the depth is 12 cm, and the height is 4 mm.
 
 // Size settings
-baseplate_width  = 140;
+baseplate_width  = 140;  //mm
 
-// Chose here which plate you want to generate:
+// Cohose here which plate you want to generate:
 GENERATE = "base";  // "left", "base" or "right",
 
 // CODE. DO NOT EDIT BELOW UNLESS YOU KNOW WHAT YOU'RE DOING

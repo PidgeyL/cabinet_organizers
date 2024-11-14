@@ -1,14 +1,14 @@
-// Size settings
+// Size settings in mm
 plate_width  =  60;  // The width of the base-plate
-plate_border = 10;   // The border around the pot.
-                     // Pot size will be plate_width - plate_border
+plate_border =  10;  // The border around the pot.
+                     // Pot size will be plate_width - plate_border*2
 pot_height    = 60;  // The height of the pot
 pot_rim       =  5;  // The rim width of the pot
 corner_radius =  3;  // How round we want the corners to be
 
-// Chose here which plate you want to generate:
+// Cohose here which item you want to generate:
 GENERATE = "base";  // "base" or "pot",
-DEVIDER  = true;
+DIVIDER  = true;
 
 // CODE. DO NOT EDIT BELOW UNLESS YOU KNOW WHAT YOU'RE DOING
 
@@ -41,7 +41,7 @@ module pot(){
                             false, corner_radius);
             }
         }
-        if (DEVIDER){
+        if (DIVIDER){
             translate([pot_rim-2, pot_depth/2, pot_rim]){
                 roundedcube([plate_width - plate_border*2 - pot_rim,
                              3, pot_height-pot_rim-10],
