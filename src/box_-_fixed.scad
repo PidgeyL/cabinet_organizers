@@ -7,8 +7,9 @@ pot_height    = 60;  // The height of the pot
 pot_rim       =  5;  // The rim width of the pot
 corner_radius =  3;  // How round we want the corners to be
 
-// Choose whether there should be a divider:
-DIVIDER  = true;
+// Choose modifications
+DIVIDER  = true;   // Add a divider in the pot
+NO_FEET  = false;  // Remove the connector feet
 
 // CODE. DO NOT EDIT BELOW UNLESS YOU KNOW WHAT YOU'RE DOING
 
@@ -19,7 +20,7 @@ module box_baseplate(){
     pot_width = plate_width - plate_border*2;
     pot_depth = BASE_DEFAULT_DEPTH  - plate_border*2;
 
-    baseplate(plate_width);
+    baseplate(plate_width, no_feet=NO_FEET);
     translate([plate_border, plate_border, 0]){
         difference(){
             roundedcube([pot_width, pot_depth, pot_height], false, corner_radius);

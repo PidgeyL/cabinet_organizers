@@ -7,6 +7,9 @@ pot_front_height = 40;  // The height of the front of the pot
 pot_rim          =  5;  // The rim width of the pot
 corner_radius    =  3;  // How round we want the corners to be
 
+// Chose modifications
+NO_FEET  = false;   // Remove the connector feet
+
 // Choose here which item you want to generate:
 GENERATE = "base";  // "base" or "pot",
 
@@ -18,7 +21,7 @@ include <lib/baseplate.scad>;
 module box_baseplate(){
     depth = BASE_DEFAULT_HEIGHT / 2;
     difference() {
-        baseplate(plate_width);
+        baseplate(plate_width, no_feet=NO_FEET);
         // Indent with 1 mm wiggle-room
         translate([plate_border-1, plate_border-1, BASE_DEFAULT_HEIGHT]){
             roundedcube([plate_width - plate_border*2 + 2,
