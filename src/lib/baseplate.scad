@@ -1,7 +1,28 @@
 // Include settings
 include <../_settings.scad>;
+include <roundedcube.scad>;
 
-module baseplate(width, depth = BASE_DEFAULT_DEPTH, height = BASE_DEFAULT_HEIGHT,
+module baseplate_indent(width,
+                        depth   = BASE_DEFAULT_DEPTH,
+                        height  = BASE_DEFAULT_HEIGHT,
+                        rotate  = false,
+                        no_feet = false,
+                        plate_border  = BASE_DEFAULT_BORDER,
+                        corner_radius = DEFAULT_RADIUS){
+    indent = height / 2 + corner_radius / 2;
+    difference(){
+        baseplate(width, depth, height, rotate, no_feet);
+        // Indent with 1 mm wiggle-room
+        translate([plate_border-1, plate_border-1, indent]){
+            roundedcube([width - plate_border*2 + 2,
+                         depth - plate_border*2 + 2, height],
+                        false, corner_radius);
+        }
+    }
+}
+
+module baseplate(width, depth = BASE_DEFAULT_DEPTH,
+                 height = BASE_DEFAULT_HEIGHT,
                  rotate=false, no_feet=false){
     if (rotate == true){
         rotate([0,0,180]){

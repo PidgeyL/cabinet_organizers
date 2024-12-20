@@ -1,7 +1,8 @@
 // These variables specify the default depth and height of the baseplate
-BASE_DEFAULT_HEIGHT =   4; //milimeters
-BASE_DEFAULT_DEPTH  = 120; //milimeters
-
+BASE_DEFAULT_HEIGHT =   4;  //milimeters
+BASE_DEFAULT_DEPTH  = 120;  //milimeters
+BASE_DEFAULT_BORDER =  10;  //milimeters
+DEFAULT_RADIUS      =   3;
 
 // These variables only need to be modified if you have extreme baseplate sizes
 feet_width  = 6;
